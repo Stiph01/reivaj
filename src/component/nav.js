@@ -30,7 +30,6 @@ export default function Nav() {
           <li><Link href="/" className="hover:text-[#0A66CC] transition">Inicio</Link></li>
           <li><Link href="/nosotros" className="hover:text-[#0A66CC] transition">Nosotros</Link></li>
           <li><Link href="/servicios" className="hover:text-[#0A66CC] transition">Servicios</Link></li>
-          <li><Link href="/contacto" className="hover:text-[#0A66CC] transition">Contacto</Link></li>
         </ul>
 
         <Link
