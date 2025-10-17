@@ -2,17 +2,18 @@ import Image from "next/image";
 
 export default function Contacto() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f8fafc] via-white to-[#e2e8f0] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100 flex flex-col items-center px-6 sm:px-20 py-24">
+    <div className="min-h-screen bg-white text-gray-900 flex flex-col items-center px-6 sm:px-20 py-24">
       <section className="max-w-5xl w-full text-center sm:text-left">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-[#0A66CC] mb-4">Contáctanos</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Estamos listos para ayudarte a optimizar la gestión contable y tributaria de tu empresa. Completa el formulario o comunícate con nosotros a través de nuestros canales oficiales.
+          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Estamos listos para ayudarte a optimizar la gestión contable y tributaria de tu empresa. 
+            Completa el formulario o comunícate con nosotros a través de nuestros canales oficiales.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-md">
+          <div className="bg-[#f8fafc] border border-gray-200 p-8 rounded-2xl shadow-sm">
             <h2 className="text-2xl font-semibold text-[#0A66CC] mb-6 text-center sm:text-left">
               Envíanos un mensaje
             </h2>
@@ -20,22 +21,22 @@ export default function Contacto() {
               <input
                 type="text"
                 placeholder="Nombre completo"
-                className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC]"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <input
                 type="email"
                 placeholder="Correo electrónico"
-                className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC]"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <input
                 type="text"
                 placeholder="Asunto"
-                className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC]"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <textarea
                 rows="5"
                 placeholder="Mensaje"
-                className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] resize-none"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white resize-none"
               ></textarea>
               <button
                 type="submit"
@@ -48,24 +49,28 @@ export default function Contacto() {
 
           <div className="flex flex-col justify-center gap-10">
             <div>
-              <h2 className="text-2xl font-semibold text-[#0A66CC] mb-3">Información de contacto</h2>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-[#0A66CC] mb-3">
+                Información de contacto
+              </h2>
+              <p className="text-gray-700 leading-relaxed">
                 <span className="font-semibold">Dirección:</span> Av. Los Empresarios 123, Lima, Perú
               </p>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 <span className="font-semibold">Teléfono:</span> +51 999 456 789
               </p>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 <span className="font-semibold">Correo:</span> contacto@reivajconsultoria.com
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-[#0A66CC] mb-3">Horario de atención</h2>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-[#0A66CC] mb-3">
+                Horario de atención
+              </h2>
+              <p className="text-gray-700 leading-relaxed">
                 Lunes a Viernes: 9:00 a.m. - 6:00 p.m.
               </p>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 Sábados: 9:00 a.m. - 1:00 p.m.
               </p>
             </div>
