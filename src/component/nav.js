@@ -27,30 +27,10 @@ export default function Nav() {
         </Link>
 
         <ul className="hidden md:flex items-center gap-8 text-[14px] font-medium text-gray-700">
-          <li>
-            <Link href="/" className="relative group transition-colors duration-300">
-              Inicio
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#0A66CC] group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/nosotros" className="relative group transition-colors duration-300">
-              Nosotros
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#0A66CC] group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/servicios" className="relative group transition-colors duration-300">
-              Servicios
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#0A66CC] group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contacto" className="relative group transition-colors duration-300">
-              Contacto
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#0A66CC] group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </li>
+          <li><Link href="/" className="hover:text-[#0A66CC] transition">Inicio</Link></li>
+          <li><Link href="/nosotros" className="hover:text-[#0A66CC] transition">Nosotros</Link></li>
+          <li><Link href="/servicios" className="hover:text-[#0A66CC] transition">Servicios</Link></li>
+          <li><Link href="/contacto" className="hover:text-[#0A66CC] transition">Contacto</Link></li>
         </ul>
 
         <Link
@@ -61,17 +41,8 @@ export default function Nav() {
         </Link>
 
         <div className="md:hidden flex items-center">
-          <button
-            type="button"
-            className="text-gray-700 focus:outline-none hover:text-[#0A66CC]"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
+          <button type="button" className="text-gray-700 hover:text-[#0A66CC]">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>

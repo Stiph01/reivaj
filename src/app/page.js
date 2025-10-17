@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -90,7 +91,6 @@ export default function Home() {
 
   return (
     <div className="font-sans text-gray-900 flex flex-col items-center justify-between bg-gradient-to-b from-white via-blue-50 to-[#EAF2FD]">
-
       {/* HERO CON IMAGEN DE FONDO */}
       <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center sm:text-left px-6 sm:px-20 overflow-hidden">
         <Image
@@ -115,19 +115,20 @@ export default function Home() {
             Brindamos soluciones integrales en contabilidad, tributación, auditoría y planeamiento financiero.
             Impulsamos la toma de decisiones estratégicas con análisis precisos, visión empresarial y resultados medibles.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-6">
-            <a
-              href="#servicios"
+            <Link
+              href="/servicios"
               className="bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               Conoce Nuestros Servicios
-            </a>
-            <a
-              href="#contacto"
+            </Link>
+            <Link
+              href="/contacto"
               className="border-2 border-[#0A66CC] text-[#0A66CC] hover:bg-[#0A66CC] hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               Solicita una Consulta
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -168,15 +169,15 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="w-full border-t border-gray-200 py-8 bg-white/70 backdrop-blur-md text-gray-500 text-sm flex flex-wrap justify-center gap-8">
-        <a href="#nosotros" className="hover:text-[#0A66CC] transition-colors">
+        <Link href="/nosotros" className="hover:text-[#0A66CC] transition-colors">
           Sobre Nosotros
-        </a>
-        <a href="#servicios" className="hover:text-[#0A66CC] transition-colors">
+        </Link>
+        <Link href="/servicios" className="hover:text-[#0A66CC] transition-colors">
           Servicios
-        </a>
-        <a href="#contacto" className="hover:text-[#0A66CC] transition-colors">
+        </Link>
+        <Link href="/contacto" className="hover:text-[#0A66CC] transition-colors">
           Contacto
-        </a>
+        </Link>
         <a
           href="https://linkedin.com"
           target="_blank"
