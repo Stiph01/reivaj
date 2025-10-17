@@ -6,7 +6,7 @@ export default function Nav(){
         <li><Link href="/">Inicio</Link></li>
         <li><Link href="/nosotros">Nosotros</Link></li>
         <li><Link href="/contacto">Contacto</Link></li>
-        <li><Link href="/servicio">Servicios</Link></li>
+        <li><Link href="/servicios">Servicios</Link></li>
         </ul>
         </nav>
     )
