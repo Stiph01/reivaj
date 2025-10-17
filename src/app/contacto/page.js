@@ -1,40 +1,85 @@
-import Image from "next/image";
+"use client"
+import { useState } from "react"
+import Image from "next/image"
 
 export default function Contacto() {
+  const [form, setForm] = useState({ nombre: "", email: "", asunto: "", mensaje: "" })
+  const [alerta, setAlerta] = useState({ tipo: "", texto: "" })
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!form.nombre || !form.email || !form.asunto || !form.mensaje) {
+      setAlerta({ tipo: "error", texto: "Por favor, completa todos los campos antes de enviar." })
+      setTimeout(() => setAlerta({ tipo: "", texto: "" }), 3500)
+      return
+    }
+    setAlerta({ tipo: "exito", texto: "¡Mensaje enviado correctamente! Te responderemos pronto." })
+    setForm({ nombre: "", email: "", asunto: "", mensaje: "" })
+    setTimeout(() => setAlerta({ tipo: "", texto: "" }), 4000)
+  }
+
   return (
-    <div className="min-h-screen bg-white text-gray-900 flex flex-col items-center px-6 sm:px-20 py-24">
+    <div className="min-h-screen bg-gradient-to-b from-white via-[#F5F8FF] to-white text-gray-900 flex flex-col items-center px-6 sm:px-20 py-24 font-sans relative">
+      {alerta.texto && (
+        <div
+          className={`fixed top-6 right-6 z-50 px-5 py-3 rounded-lg shadow-lg text-white font-medium transition-all duration-300 ${
+            alerta.tipo === "error" ? "bg-red-500" : "bg-emerald-500"
+          }`}
+        >
+          {alerta.texto}
+        </div>
+      )}
+
       <section className="max-w-5xl w-full text-center sm:text-left">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-[#0A66CC] mb-4">Contáctanos</h1>
-          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-[#0A66CC] to-[#4F46E5] bg-clip-text text-transparent mb-4">
+            Contáctanos
+          </h1>
+          <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
             Estamos listos para ayudarte a optimizar la gestión contable y tributaria de tu empresa. 
             Completa el formulario o comunícate con nosotros a través de nuestros canales oficiales.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-[#f8fafc] border border-gray-200 p-8 rounded-2xl shadow-sm">
+          <div className="bg-white border border-slate-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500">
             <h2 className="text-2xl font-semibold text-[#0A66CC] mb-6 text-center sm:text-left">
               Envíanos un mensaje
             </h2>
-            <form className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <input
                 type="text"
+                name="nombre"
+                value={form.nombre}
+                onChange={handleChange}
                 placeholder="Nombre completo"
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <input
                 type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 placeholder="Correo electrónico"
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <input
                 type="text"
+                name="asunto"
+                value={form.asunto}
+                onChange={handleChange}
                 placeholder="Asunto"
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <textarea
                 rows="5"
+                name="mensaje"
+                value={form.mensaje}
+                onChange={handleChange}
                 placeholder="Mensaje"
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white resize-none"
               ></textarea>
@@ -53,13 +98,13 @@ export default function Contacto() {
                 Información de contacto
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                <span className="font-semibold">Dirección:</span> Av. Los Empresarios 123, Lima, Perú
+                <span className="font-semibold">Dirección:</span> Jr. Lima 326, Oficina 306 - Hyo Huancayo, Perú
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <span className="font-semibold">Teléfono:</span> +51 999 456 789
+                <span className="font-semibold">Teléfono:</span> +51 998 804 826
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <span className="font-semibold">Correo:</span> contacto@reivajconsultoria.com
+                <span className="font-semibold">Correo:</span> jjasesoria.contabilidad@gmail.com
               </p>
             </div>
 
@@ -81,21 +126,39 @@ export default function Contacto() {
                 target="_blank"
                 className="w-10 h-10 flex items-center justify-center bg-[#0A66CC] text-white rounded-full hover:bg-[#084b99] transition"
               >
-                <Image src="/icons/linkedin.svg" alt="LinkedIn" width={20} height={20} />
+                <Image
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                  className="invert"
+                />
               </a>
               <a
                 href="https://www.facebook.com"
                 target="_blank"
                 className="w-10 h-10 flex items-center justify-center bg-[#0A66CC] text-white rounded-full hover:bg-[#084b99] transition"
               >
-                <Image src="/icons/facebook.svg" alt="Facebook" width={20} height={20} />
+                <Image
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                  alt="Facebook"
+                  width={20}
+                  height={20}
+                  className="invert"
+                />
               </a>
               <a
                 href="https://www.instagram.com"
                 target="_blank"
                 className="w-10 h-10 flex items-center justify-center bg-[#0A66CC] text-white rounded-full hover:bg-[#084b99] transition"
               >
-                <Image src="/icons/instagram.svg" alt="Instagram" width={20} height={20} />
+                <Image
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                  alt="Instagram"
+                  width={20}
+                  height={20}
+                  className="invert"
+                />
               </a>
             </div>
           </div>
@@ -103,14 +166,24 @@ export default function Contacto() {
 
         <div className="mt-16">
           <iframe
-            className="w-full h-80 rounded-2xl shadow-md"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.856278770621!2d-77.04275432491647!3d-12.129829945903064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c83b2b5c8c6b%3A0x8a8c8b3a9f43b18f!2sLima%2C%20Per%C3%BA!5e0!3m2!1ses-419!2sus!4v1700000000000"
-            allowFullScreen=""
+            className="w-full h-80 rounded-3xl shadow-xl border-2 border-[#0A66CC]/20"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.622075567791!2d-75.2101124!3d-12.0695033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e964fb2906ba7%3A0xb296303bb47ccdc2!2sJr.%20Lima%20326%2C%20Huancayo%2012001%2C%20Per%C3%BA!5e0!3m2!1ses-419!2sar!4v1760740909034!5m2!1ses-419!2sar"
+            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+
+          <div className="text-center mt-6">
+            <a
+              href="https://maps.app.goo.gl/ggecBrXDBBrUkWpw7"
+              target="_blank"
+              className="inline-block bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg"
+            >
+              Ver en Google Maps
+            </a>
+          </div>
         </div>
       </section>
     </div>
-  );
+  )
 }
