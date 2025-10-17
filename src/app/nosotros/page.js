@@ -1,5 +1,9 @@
 "use client"
 import Image from "next/image"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay, Pagination } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/pagination"
 
 export default function Nosotros() {
   const testimonios = [
@@ -9,6 +13,7 @@ export default function Nosotros() {
       texto:
         "Excelente servicio, siempre atentos y con un enfoque estratégico que nos ha permitido optimizar la carga tributaria.",
       estrellas: 5,
+      foto: "/images/avatar1.png",
     },
     {
       nombre: "Carlos Mendoza",
@@ -16,6 +21,7 @@ export default function Nosotros() {
       texto:
         "Profesionalismo y puntualidad inigualables. Reivaj nos brinda confianza total en el manejo contable y fiscal.",
       estrellas: 5,
+      foto: "/images/avatar2.png",
     },
     {
       nombre: "Lucía Ramírez",
@@ -23,6 +29,15 @@ export default function Nosotros() {
       texto:
         "Reivaj Consultoría es sinónimo de transparencia y resultados. Los recomiendo plenamente.",
       estrellas: 4,
+      foto: "/images/avatar3.png",
+    },
+    {
+      nombre: "Jorge Salazar",
+      empresa: "Director General - Soluciones Empresariales SAC",
+      texto:
+        "Su asesoría contable nos permitió optimizar costos y cumplir con las normas de manera impecable. Un equipo excepcional.",
+      estrellas: 5,
+      foto: "/images/avatar4.png",
     },
   ]
 
@@ -150,25 +165,47 @@ export default function Nosotros() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A66CC] mb-12">
             Opiniones de Nuestros Clientes
           </h2>
-          <div className="grid md:grid-cols-3 gap-10">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={40}
+            slidesPerView={1}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            loop
+            pagination={{ clickable: true }}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="max-w-6xl mx-auto pb-10"
+          >
             {testimonios.map((t, i) => (
-              <div
-                key={i}
-                className="bg-white border border-slate-200 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-8 flex flex-col items-center text-center"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(t.estrellas)].map((_, j) => (
-                    <span key={j} className="text-yellow-400 text-xl">★</span>
-                  ))}
+              <SwiperSlide key={i}>
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 mx-4 flex flex-col items-center text-center">
+                  <div className="relative w-20 h-20 mb-4">
+                    <Image
+                      src={t.foto}
+                      alt={t.nombre}
+                      fill
+                      className="rounded-full object-cover border-4 border-[#0A66CC]/10 shadow-md"
+                    />
+                  </div>
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(t.estrellas)].map((_, j) => (
+                      <span key={j} className="text-yellow-400 text-xl drop-shadow-sm">★</span>
+                    ))}
+                  </div>
+                  <p className="text-slate-700 italic mb-6 leading-relaxed">
+                    “{t.texto}”
+                  </p>
+                  <h3 className="font-bold text-[#0A66CC]">{t.nombre}</h3>
+                  <p className="text-sm text-slate-500 mt-1">{t.empresa}</p>
                 </div>
-                <p className="text-slate-700 italic mb-6 leading-relaxed">
-                  “{t.texto}”
-                </p>
-                <h3 className="font-bold text-[#0A66CC]">{t.nombre}</h3>
-                <p className="text-sm text-slate-500 mt-1">{t.empresa}</p>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </section>
     </div>
