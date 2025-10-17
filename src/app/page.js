@@ -1,13 +1,13 @@
-"use client";
-import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Link from "next/link";
+"use client"
+import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
+import Image from "next/image"
+import Link from "next/link"
 
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false })
 
 export default function Home() {
-  const [series, setSeries] = useState([]);
+  const [series, setSeries] = useState([])
 
   useEffect(() => {
     const data = [
@@ -23,14 +23,14 @@ export default function Home() {
       { mes: "Oct", ingresos: 33000, egresos: 18000 },
       { mes: "Nov", ingresos: 35000, egresos: 20000 },
       { mes: "Dic", ingresos: 38000, egresos: 21000 },
-    ];
-    const utilidad = data.map((d) => d.ingresos - d.egresos);
+    ]
+    const utilidad = data.map((d) => d.ingresos - d.egresos)
     setSeries([
       { name: "", data: data.map((d) => d.ingresos) },
       { name: "", data: data.map((d) => d.egresos) },
       { name: "", data: utilidad },
-    ]);
-  }, []);
+    ])
+  }, [])
 
   const options = {
     chart: {
@@ -59,7 +59,8 @@ export default function Home() {
     },
     xaxis: {
       categories: [
-        "Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic",
+        "Ene", "Feb", "Mar", "Abr", "May", "Jun",
+        "Jul", "Ago", "Sep", "Oct", "Nov", "Dic",
       ],
       labels: { style: { colors: "#555", fontSize: "13px", fontWeight: 500 } },
     },
@@ -87,11 +88,10 @@ export default function Home() {
         stops: [0, 90, 100],
       },
     },
-  };
+  }
 
   return (
     <div className="font-sans text-gray-900 flex flex-col items-center justify-between bg-gradient-to-b from-white via-blue-50 to-[#EAF2FD]">
-      {/* HERO CON IMAGEN DE FONDO */}
       <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center sm:text-left px-6 sm:px-20 overflow-hidden">
         <Image
           src="/images/fondo-corporativo.jpeg"
@@ -133,7 +133,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* KPI */}
       <section className="w-full max-w-5xl grid sm:grid-cols-4 gap-6 px-8 sm:px-0 text-center mb-12 animate-slideUp">
         {[
           ["+15", "Años de Experiencia"],
@@ -151,7 +150,6 @@ export default function Home() {
         ))}
       </section>
 
-      {/* GRAFICO */}
       <section className="w-full max-w-5xl px-8 sm:px-0 pb-20 animate-fadeIn">
         <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center sm:text-left">
           Análisis Financiero - Evolución de Ingresos y Egresos
@@ -167,28 +165,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="w-full border-t border-gray-200 py-8 bg-white/70 backdrop-blur-md text-gray-500 text-sm flex flex-wrap justify-center gap-8">
-        <Link href="/nosotros" className="hover:text-[#0A66CC] transition-colors">
-          Sobre Nosotros
-        </Link>
-        <Link href="/servicios" className="hover:text-[#0A66CC] transition-colors">
-          Servicios
-        </Link>
-        <Link href="/contacto" className="hover:text-[#0A66CC] transition-colors">
-          Contacto
-        </Link>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-[#0A66CC] transition-colors flex items-center gap-1"
-        >
-          LinkedIn <span className="text-lg">↗</span>
-        </a>
-      </footer>
-
-      {/* ANIMACIONES */}
       <style jsx global>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(30px); }
@@ -198,5 +174,5 @@ export default function Home() {
         .animate-slideUp { animation: fadeIn 1.4s ease-out; }
       `}</style>
     </div>
-  );
+  )
 }
