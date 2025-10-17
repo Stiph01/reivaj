@@ -58,10 +58,10 @@ export default function Contacto() {
                 <span className="font-semibold">Dirección:</span> Jr. Lima 326, Oficina 306 - Hyo Huancayo, Perú
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <span className="font-semibold">Teléfono:</span> +51 999 456 789
+                <span className="font-semibold">Teléfono:</span> +51 998 804 826
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <span className="font-semibold">Correo:</span> contacto@reivajconsultoria.com
+                <span className="font-semibold">Correo:</span> jjasesoria.contabilidad@gmail.com
               </p>
             </div>
 
