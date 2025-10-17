@@ -83,24 +83,19 @@ export default function Servicios() {
     { src: "/images/prima.png", alt: "PRIMA AFP" },
   ];
 
-  // Para animaciones on-scroll
   const espRef = useRef(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((ent) => {
-          if (ent.isIntersecting) {
-            ent.target.classList.add("animate-fadeUp");
-          }
+          if (ent.isIntersecting) ent.target.classList.add("animate-fadeUp");
         });
       },
       { threshold: 0.2 }
     );
     const els = espRef.current?.querySelectorAll(".card-especializado");
     els?.forEach((el) => observer.observe(el));
-    return () => {
-      els?.forEach((el) => observer.unobserve(el));
-    };
+    return () => els?.forEach((el) => observer.unobserve(el));
   }, []);
 
   return (
@@ -108,7 +103,6 @@ export default function Servicios() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_10%,rgba(10,102,204,0.08),transparent_70%)]"></div>
 
       <section className="max-w-7xl w-full mx-auto relative z-10">
-        {/* Encabezado */}
         <div className="text-center mb-20">
           <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#0A66CC] via-[#2D9CDB] to-[#60A5FA] bg-clip-text text-transparent mb-6 tracking-tight drop-shadow-sm">
             Nuestros Servicios
@@ -123,7 +117,6 @@ export default function Servicios() {
           </p>
         </div>
 
-        {/* Tarjetas principales */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {servicios.map((s, i) => (
             <div
@@ -149,7 +142,6 @@ export default function Servicios() {
           ))}
         </div>
 
-        {/* Servicios Especializados */}
         <div
           className="mt-28 bg-white/95 rounded-3xl shadow-lg border border-slate-200 p-16 backdrop-blur-sm relative overflow-hidden"
           ref={espRef}
@@ -176,7 +168,6 @@ export default function Servicios() {
           </div>
         </div>
 
-        {/* Carrusel de logos */}
         <div className="mt-28">
           <h3 className="text-center text-2xl font-semibold text-[#0A66CC] mb-10">
             Organismos & Entidades Vinculadas
@@ -187,10 +178,7 @@ export default function Servicios() {
             slidesPerView={5}
             loop
             speed={4000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 0, disableOnInteraction: false }}
             allowTouchMove={false}
             breakpoints={{
               320: { slidesPerView: 2 },
@@ -216,7 +204,6 @@ export default function Servicios() {
           </Swiper>
         </div>
 
-        {/* Cierre */}
         <div className="mt-28 text-center">
           <h2 className="text-3xl font-bold text-[#0A66CC] mb-4">
             ¿Por qué elegirnos?
@@ -229,17 +216,6 @@ export default function Servicios() {
             para guiar tu empresa hacia un futuro sólido, transparente y con crecimiento sostenible.
           </p>
         </div>
-
-        {/* Footer */}
-        <footer className="mt-24 pt-10 border-t border-slate-200 text-center text-sm text-slate-500 relative z-10">
-          <p>
-            © {new Date().getFullYear()} Reivaj Consultoría Contable y Tributaria. Todos los derechos reservados.
-          </p>
-          <p className="mt-2 text-slate-400">
-            Desarrollado por{" "}
-            <span className="font-semibold text-[#0A66CC]">AmautaDev</span>.
-          </p>
-        </footer>
       </section>
 
       <style jsx>{`
