@@ -1,8 +1,39 @@
+"use client"
+import { useState } from "react"
 import Image from "next/image"
 
 export default function Contacto() {
+  const [form, setForm] = useState({ nombre: "", email: "", asunto: "", mensaje: "" })
+  const [alerta, setAlerta] = useState({ tipo: "", texto: "" })
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!form.nombre || !form.email || !form.asunto || !form.mensaje) {
+      setAlerta({ tipo: "error", texto: "Por favor, completa todos los campos antes de enviar." })
+      setTimeout(() => setAlerta({ tipo: "", texto: "" }), 3500)
+      return
+    }
+    setAlerta({ tipo: "exito", texto: "¡Mensaje enviado correctamente! Te responderemos pronto." })
+    setForm({ nombre: "", email: "", asunto: "", mensaje: "" })
+    setTimeout(() => setAlerta({ tipo: "", texto: "" }), 4000)
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-[#F5F8FF] to-white text-gray-900 flex flex-col items-center px-6 sm:px-20 py-24 font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-white via-[#F5F8FF] to-white text-gray-900 flex flex-col items-center px-6 sm:px-20 py-24 font-sans relative">
+      {alerta.texto && (
+        <div
+          className={`fixed top-6 right-6 z-50 px-5 py-3 rounded-lg shadow-lg text-white font-medium transition-all duration-300 ${
+            alerta.tipo === "error" ? "bg-red-500" : "bg-emerald-500"
+          }`}
+        >
+          {alerta.texto}
+        </div>
+      )}
+
       <section className="max-w-5xl w-full text-center sm:text-left">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-extrabold bg-gradient-to-r from-[#0A66CC] to-[#4F46E5] bg-clip-text text-transparent mb-4">
@@ -19,24 +50,36 @@ export default function Contacto() {
             <h2 className="text-2xl font-semibold text-[#0A66CC] mb-6 text-center sm:text-left">
               Envíanos un mensaje
             </h2>
-            <form className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <input
                 type="text"
+                name="nombre"
+                value={form.nombre}
+                onChange={handleChange}
                 placeholder="Nombre completo"
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <input
                 type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 placeholder="Correo electrónico"
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <input
                 type="text"
+                name="asunto"
+                value={form.asunto}
+                onChange={handleChange}
                 placeholder="Asunto"
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white"
               />
               <textarea
                 rows="5"
+                name="mensaje"
+                value={form.mensaje}
+                onChange={handleChange}
                 placeholder="Mensaje"
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A66CC] bg-white resize-none"
               ></textarea>
