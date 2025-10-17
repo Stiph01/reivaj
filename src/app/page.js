@@ -91,8 +91,8 @@ export default function Home() {
   }
 
   return (
-    <div className="font-sans text-gray-900 flex flex-col items-center justify-between bg-gradient-to-b from-white via-blue-50 to-[#EAF2FD]">
-      <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center sm:text-left px-6 sm:px-20 overflow-hidden">
+    <div className="p-16 font-sans text-gray-900 flex flex-col items-center justify-between bg-gradient-to-b from-white via-blue-50 to-[#EAF2FD]">
+      <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center sm:text-left px-4 sm:px-20 overflow-hidden">
         <Image
           src="/images/fondo-corporativo.jpeg"
           alt="Fondo corporativo Reivaj"
@@ -101,34 +101,48 @@ export default function Home() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-blue-50/90"></div>
-        <div className="relative z-10 max-w-4xl space-y-6 animate-fadeIn">
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
-            Reivaj Consultoría
-          </h1>
-          <h2 className="text-2xl sm:text-3xl font-semibold text-[#0A66CC]">
-            Excelencia Financiera y Confianza Profesional
-          </h2>
-          <h3 className="text-lg sm:text-xl text-gray-700 font-medium">
-            Especialistas en Asesoría Contable, Tributaria, Laboral y Financiera
-          </h3>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto sm:mx-0">
-            Brindamos soluciones integrales en contabilidad, tributación, auditoría y planeamiento financiero.
-            Impulsamos la toma de decisiones estratégicas con análisis precisos, visión empresarial y resultados medibles.
-          </p>
+        <div className="md:flex justify-evenly items-center gap-4">
+          <div className="md:w-3/5 relative z-10 max-w-4xl space-y-6 animate-fadeIn">
+            <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
+              Reivaj Consultoría
+            </h1>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#0A66CC]">
+              Excelencia Financiera y Confianza Profesional
+            </h2>
+            <h3 className="text-lg sm:text-xl text-gray-700 font-medium">
+              Especialistas en Asesoría Contable, Tributaria, Laboral y
+              Financiera
+            </h3>
+            <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto sm:mx-0">
+              Brindamos soluciones integrales en contabilidad, tributación,
+              auditoría y planeamiento financiero. Impulsamos la toma de
+              decisiones estratégicas con análisis precisos, visión empresarial
+              y resultados medibles.
+            </p>
 
-          <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-6">
-            <Link
-              href="/servicios"
-              className="bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Conoce Nuestros Servicios
-            </Link>
-            <Link
-              href="/contacto"
-              className="border-2 border-[#0A66CC] text-[#0A66CC] hover:bg-[#0A66CC] hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-            >
-              Solicita una Consulta
-            </Link>
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-6">
+              <Link
+                href="/servicios"
+                className="bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Conoce Nuestros Servicios
+              </Link>
+              <Link
+                href="/contacto"
+                className="border-2 border-[#0A66CC] text-[#0A66CC] hover:bg-[#0A66CC] hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              >
+                Solicita una Consulta
+              </Link>
+            </div>
+          </div>
+          <div className="md:w-2/5 p-3 flex justify-center my-6">
+            <Image
+              src="/images/image_finance.jpg"
+              alt="imagen referencial consultoria financiera"
+              width={700}
+              height={700}
+              className="relative z-10 w-full animate-fadeIn md:rounded-4xl rounded-2xl"
+            />
           </div>
         </div>
       </section>
@@ -167,12 +181,22 @@ export default function Home() {
 
       <style jsx global>{`
         @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
-        .animate-fadeIn { animation: fadeIn 1.2s ease-out; }
-        .animate-slideUp { animation: fadeIn 1.4s ease-out; }
+        .animate-fadeIn {
+          animation: fadeIn 1.2s ease-out;
+        }
+        .animate-slideUp {
+          animation: fadeIn 1.4s ease-out;
+        }
       `}</style>
     </div>
-  )
+  );
 }
