@@ -13,7 +13,7 @@ export default function Nosotros() {
       texto:
         "Excelente servicio, siempre atentos y con un enfoque estratégico que nos ha permitido optimizar la carga tributaria.",
       estrellas: 5,
-      foto: "/images/avatar1.png",
+      foto: "/images/avatar1.jpg",
     },
     {
       nombre: "Carlos Mendoza",
@@ -21,7 +21,7 @@ export default function Nosotros() {
       texto:
         "Profesionalismo y puntualidad inigualables. Reivaj nos brinda confianza total en el manejo contable y fiscal.",
       estrellas: 5,
-      foto: "/images/avatar2.png",
+      foto: "/images/avatar2.jpg",
     },
     {
       nombre: "Lucía Ramírez",
@@ -29,7 +29,7 @@ export default function Nosotros() {
       texto:
         "Reivaj Consultoría es sinónimo de transparencia y resultados. Los recomiendo plenamente.",
       estrellas: 4,
-      foto: "/images/avatar3.png",
+      foto: "/images/avatar3.jpg",
     },
     {
       nombre: "Jorge Salazar",
@@ -37,7 +37,7 @@ export default function Nosotros() {
       texto:
         "Su asesoría contable nos permitió optimizar costos y cumplir con las normas de manera impecable. Un equipo excepcional.",
       estrellas: 5,
-      foto: "/images/avatar4.png",
+      foto: "/images/avatar4.jpg",
     },
   ]
 
