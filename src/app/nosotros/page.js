@@ -2,6 +2,30 @@
 import Image from "next/image"
 
 export default function Nosotros() {
+  const testimonios = [
+    {
+      nombre: "María Fernández",
+      empresa: "Gerente Financiera - Inversiones Andinas SAC",
+      texto:
+        "Excelente servicio, siempre atentos y con un enfoque estratégico que nos ha permitido optimizar la carga tributaria.",
+      estrellas: 5,
+    },
+    {
+      nombre: "Carlos Mendoza",
+      empresa: "Fundador - TechNova Perú",
+      texto:
+        "Profesionalismo y puntualidad inigualables. Reivaj nos brinda confianza total en el manejo contable y fiscal.",
+      estrellas: 5,
+    },
+    {
+      nombre: "Lucía Ramírez",
+      empresa: "CEO - Importadora Ramírez EIRL",
+      texto:
+        "Reivaj Consultoría es sinónimo de transparencia y resultados. Los recomiendo plenamente.",
+      estrellas: 4,
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-[#F5F8FF] to-white text-gray-900 flex flex-col items-center px-6 sm:px-20 py-24 font-sans overflow-hidden">
       <section className="max-w-6xl w-full text-center sm:text-left relative z-10">
@@ -119,6 +143,31 @@ export default function Nosotros() {
                 asesorías estratégicas orientadas al éxito.
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-24 text-center">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A66CC] mb-12">
+            Opiniones de Nuestros Clientes
+          </h2>
+          <div className="grid md:grid-cols-3 gap-10">
+            {testimonios.map((t, i) => (
+              <div
+                key={i}
+                className="bg-white border border-slate-200 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-8 flex flex-col items-center text-center"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(t.estrellas)].map((_, j) => (
+                    <span key={j} className="text-yellow-400 text-xl">★</span>
+                  ))}
+                </div>
+                <p className="text-slate-700 italic mb-6 leading-relaxed">
+                  “{t.texto}”
+                </p>
+                <h3 className="font-bold text-[#0A66CC]">{t.nombre}</h3>
+                <p className="text-sm text-slate-500 mt-1">{t.empresa}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
