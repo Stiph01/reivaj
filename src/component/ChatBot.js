@@ -97,7 +97,7 @@ export default function ChatBot() {
   useEffect(() => {
     if (open && messages.length === 0) {
       ;(async () => {
-        await addMessage("👋 ¡Hola! Soy el asistente virtual de Reivaj Consultoría.", "bot", 600)
+        await addMessage("🤖 ¡Hola! Soy tu asistente contable y financiero virtual de Reivaj.", "bot", 600)
         await addMessage("¿En qué puedo ayudarte hoy?", "bot", 500)
         await showMainOptions()
       })()
@@ -106,7 +106,7 @@ export default function ChatBot() {
 
   return (
     <>
-      {/* CHATBOT (Derecha) */}
+      {/* CHATBOT (DERECHA) */}
       <motion.div
         className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
         initial={{ opacity: 0, y: 40 }}
@@ -186,6 +186,7 @@ export default function ChatBot() {
           )}
         </AnimatePresence>
 
+        {/* BOTÓN DEL CHATBOT CON ÍCONO DE ROBOT */}
         <button
           onClick={() => setOpen(!open)}
           className="w-14 h-14 rounded-full bg-[#0A66CC] hover:bg-[#084b99] shadow-lg flex items-center justify-center transition-all duration-300"
@@ -195,14 +196,16 @@ export default function ChatBot() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" className="w-7 h-7">
-              <path d="M16.72 13.29A8.06 8.06 0 0017 11a8 8 0 10-8 8 8.06 8.06 0 002.29-.28l3.34 1.11a1 1 0 001.27-1.27l-1.18-3.27zM10 13a2 2 0 112-2 2 2 0 01-2 2z" />
-            </svg>
+            <motion.div whileHover={{ rotate: 10, scale: 1.1 }} transition={{ duration: 0.3 }}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white" className="w-7 h-7">
+                <path d="M256 0c17.7 0 32 14.3 32 32v32h48c35.3 0 64 28.7 64 64v64h48c17.7 0 32 14.3 32 32v192c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V224c0-17.7 14.3-32 32-32h48v-64c0-35.3 28.7-64 64-64h48V32c0-17.7 14.3-32 32-32zM144 224a32 32 0 100 64 32 32 0 000-64zm224 0a32 32 0 100 64 32 32 0 000-64zm-112 96c-35.3 0-64 21.5-64 48s28.7 48 64 48 64-21.5 64-48-28.7-48-64-48z" />
+              </svg>
+            </motion.div>
           )}
         </button>
       </motion.div>
 
-      {/* BOTÓN DE WHATSAPP IZQUIERDO CON TOOLTIP */}
+      {/* BOTÓN WHATSAPP CON TOOLTIP */}
       <div
         className="fixed bottom-6 left-6 z-50"
         onMouseEnter={() => setHoverWhatsApp(true)}
@@ -228,12 +231,7 @@ export default function ChatBot() {
           }
           className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] shadow-lg flex items-center justify-center transition-all duration-300"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 32 32"
-            fill="white"
-            className="w-8 h-8"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" className="w-8 h-8">
             <path d="M16.03 3C9.38 3 4 8.38 4 15.02c0 2.54.79 4.9 2.13 6.87L4 29l7.33-2.06A11.96 11.96 0 0016.03 27C22.67 27 28 21.62 28 14.98S22.67 3 16.03 3zm0 21.93a9.93 9.93 0 01-5.06-1.38l-.36-.21-4.36 1.22 1.24-4.24-.23-.37A9.93 9.93 0 016.1 15.02c0-5.5 4.45-9.95 9.93-9.95S25.97 9.52 25.97 15s-4.45 9.93-9.94 9.93zm5.66-7.41c-.3-.15-1.79-.88-2.06-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.88-.78-1.47-1.74-1.64-2.03-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.52-.07-.15-.67-1.6-.92-2.18-.24-.57-.49-.5-.67-.5-.17 0-.38-.02-.58-.02-.2 0-.52.08-.8.38-.27.3-1.05 1.03-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.09 3.2 5.08 4.48.71.31 1.27.5 1.7.64.72.23 1.38.2 1.9.12.58-.09 1.79-.73 2.04-1.44.25-.71.25-1.32.17-1.44-.07-.12-.27-.2-.57-.35z" />
           </svg>
         </button>
