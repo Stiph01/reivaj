@@ -104,8 +104,7 @@ export default function Contacto() {
         <div className="mt-16">
           <iframe
             className="w-full h-80 rounded-2xl shadow-md"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.856278770621!2d-77.04275432491647!3d-12.129829945903064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c83b2b5c8c6b%3A0x8a8c8b3a9f43b18f!2sLima%2C%20Per%C3%BA!5e0!3m2!1ses-419!2sus!4v1700000000000"
-            allowFullScreen=""
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.622075567791!2d-75.2101124!3d-12.0695033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e964fb2906ba7%3A0xb296303bb47ccdc2!2sJr.%20Lima%20326%2C%20Huancayo%2012001%2C%20Per%C3%BA!5e0!3m2!1ses-419!2sar!4v1760740909034!5m2!1ses-419!2sar"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
