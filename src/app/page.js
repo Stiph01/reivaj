@@ -156,7 +156,7 @@ export default function Home() {
         </h3>
         <div className="relative w-full bg-white border border-gray-200 rounded-2xl shadow-md p-6 overflow-hidden">
           <Image
-            src="/images/patron-financiero.png"
+            src="/images/9486e528-852c-46ba-8212-f7a6f55da614.png"
             alt="Fondo patrón financiero"
             fill
             className="object-cover opacity-5 absolute inset-0"
