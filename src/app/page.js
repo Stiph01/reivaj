@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -22,7 +23,6 @@ export default function Home() {
       { mes: "Nov", ingresos: 35000, egresos: 20000 },
       { mes: "Dic", ingresos: 38000, egresos: 21000 },
     ];
-
     const utilidad = data.map((d) => d.ingresos - d.egresos);
     setSeries([
       { name: "", data: data.map((d) => d.ingresos) },
@@ -37,7 +37,13 @@ export default function Home() {
       height: 420,
       toolbar: { show: false },
       zoom: { enabled: false },
-      animations: { enabled: true, easing: "easeinout", speed: 1000 },
+      animations: {
+        enabled: true,
+        easing: "easeinout",
+        speed: 1200,
+        animateGradually: { enabled: true, delay: 300 },
+        dynamicAnimation: { enabled: true, speed: 1000 },
+      },
     },
     stroke: { width: 4, curve: "smooth" },
     colors: ["#0A66CC", "#E53E3E", "#10B981"],
@@ -83,76 +89,85 @@ export default function Home() {
   };
 
   return (
-    <div className="font-sans min-h-screen bg-gradient-to-b from-white to-blue-50 text-gray-900 flex flex-col items-center justify-between p-8 sm:p-20">
-      <main className="flex flex-col items-center text-center sm:items-start sm:text-left gap-10 max-w-5xl w-full animate-fadeIn">
-        
-        {/* ENCABEZADO */}
-        <div className="space-y-4 text-center sm:text-left">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
+    <div className="font-sans text-gray-900 flex flex-col items-center justify-between bg-gradient-to-b from-white via-blue-50 to-[#EAF2FD]">
+
+      {/* HERO CON IMAGEN DE FONDO */}
+      <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center sm:text-left px-6 sm:px-20 overflow-hidden">
+        <Image
+          src="/images/fondo-corporativo.jpeg"
+          alt="Fondo corporativo Reivaj"
+          fill
+          priority
+          className="object-cover object-center opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-blue-50/90"></div>
+        <div className="relative z-10 max-w-4xl space-y-6 animate-fadeIn">
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
             Reivaj Consultoría
           </h1>
-          <h2 className="text-xl sm:text-2xl font-medium text-[#0A66CC]">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-[#0A66CC]">
             Excelencia Financiera y Confianza Profesional
           </h2>
-          <h3 className="text-lg sm:text-xl text-gray-700 font-semibold">
+          <h3 className="text-lg sm:text-xl text-gray-700 font-medium">
             Especialistas en Asesoría Contable, Tributaria, Laboral y Financiera
           </h3>
-        </div>
-
-        {/* DESCRIPCIÓN */}
-        <p className="text-gray-700 leading-relaxed text-lg max-w-2xl">
-          Brindamos soluciones integrales en contabilidad, tributación, auditoría y planeamiento financiero.
-          A través del análisis financiero ayudamos a optimizar decisiones empresariales y potenciar el
-          crecimiento sostenido con precisión y estrategia.
-        </p>
-
-        {/* KPI */}
-        <div className="grid sm:grid-cols-4 gap-6 mt-10 text-center w-full animate-slideUp">
-          {[
-            ["+15", "Años de Experiencia"],
-            ["+250", "Empresas Asesoradas"],
-            ["99%", "Cumplimiento Tributario"],
-            ["100%", "Clientes Satisfechos"],
-          ].map(([v, l]) => (
-            <div
-              key={l}
-              className="p-6 bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300"
+          <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto sm:mx-0">
+            Brindamos soluciones integrales en contabilidad, tributación, auditoría y planeamiento financiero.
+            Impulsamos la toma de decisiones estratégicas con análisis precisos, visión empresarial y resultados medibles.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-6">
+            <a
+              href="#servicios"
+              className="bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
-              <h3 className="text-4xl font-bold text-[#0A66CC]">{v}</h3>
-              <p className="text-sm text-gray-600 mt-2">{l}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* GRAFICO */}
-        <div className="mt-16 w-full animate-fadeIn">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center sm:text-left">
-            Análisis Financiero - Evolución de Ingresos y Egresos
-          </h3>
-          <div className="w-full bg-white border border-gray-200 rounded-2xl shadow-md p-6">
-            <Chart options={options} series={series} type="line" height={420} />
+              Conoce Nuestros Servicios
+            </a>
+            <a
+              href="#contacto"
+              className="border-2 border-[#0A66CC] text-[#0A66CC] hover:bg-[#0A66CC] hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Solicita una Consulta
+            </a>
           </div>
         </div>
+      </section>
 
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-fadeIn">
-          <a
-            href="#servicios"
-            className="rounded-full bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold shadow-md px-8 py-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+      {/* KPI */}
+      <section className="w-full max-w-5xl grid sm:grid-cols-4 gap-6 px-8 sm:px-0 text-center mb-12 animate-slideUp">
+        {[
+          ["+15", "Años de Experiencia"],
+          ["+250", "Empresas Asesoradas"],
+          ["99%", "Cumplimiento Tributario"],
+          ["100%", "Clientes Satisfechos"],
+        ].map(([v, l]) => (
+          <div
+            key={l}
+            className="p-6 bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300"
           >
-            Conoce Nuestros Servicios
-          </a>
-          <a
-            href="#contacto"
-            className="rounded-full border-2 border-[#0A66CC] text-[#0A66CC] hover:bg-[#0A66CC] hover:text-white font-semibold px-8 py-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-          >
-            Solicita una Consulta
-          </a>
+            <h3 className="text-4xl font-bold text-[#0A66CC]">{v}</h3>
+            <p className="text-sm text-gray-600 mt-2">{l}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* GRAFICO */}
+      <section className="w-full max-w-5xl px-8 sm:px-0 pb-20 animate-fadeIn">
+        <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center sm:text-left">
+          Análisis Financiero - Evolución de Ingresos y Egresos
+        </h3>
+        <div className="relative w-full bg-white border border-gray-200 rounded-2xl shadow-md p-6 overflow-hidden">
+          <Image
+            src="/images/patron-financiero.png"
+            alt="Fondo patrón financiero"
+            fill
+            className="object-cover opacity-5 absolute inset-0"
+          />
+          <Chart options={options} series={series} type="line" height={420} />
         </div>
-      </main>
+      </section>
 
       {/* FOOTER */}
-      <footer className="mt-20 border-t border-gray-200 pt-8 flex flex-wrap justify-center items-center gap-6 text-gray-500 text-sm">
+      <footer className="w-full border-t border-gray-200 py-8 bg-white/70 backdrop-blur-md text-gray-500 text-sm flex flex-wrap justify-center gap-8">
         <a href="#nosotros" className="hover:text-[#0A66CC] transition-colors">
           Sobre Nosotros
         </a>
@@ -172,14 +187,14 @@ export default function Home() {
         </a>
       </footer>
 
-      {/* ANIMACIONES TAILWIND */}
+      {/* ANIMACIONES */}
       <style jsx global>{`
         @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
+          from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fadeIn { animation: fadeIn 1s ease-out; }
-        .animate-slideUp { animation: fadeIn 1.3s ease-out; }
+        .animate-fadeIn { animation: fadeIn 1.2s ease-out; }
+        .animate-slideUp { animation: fadeIn 1.4s ease-out; }
       `}</style>
     </div>
   );
