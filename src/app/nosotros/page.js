@@ -1,79 +1,152 @@
+"use client";
 import Image from "next/image";
 
 export default function Nosotros() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 flex flex-col items-center px-6 sm:px-20 py-24">
-      <section className="max-w-5xl w-full text-center sm:text-left">
-        <div className="flex flex-col sm:flex-row items-center gap-10 mb-16">
+    <div className="min-h-screen bg-gradient-to-b from-white via-[#F5F8FF] to-white text-gray-900 flex flex-col items-center px-6 sm:px-20 py-24 font-sans overflow-hidden">
+      <section className="max-w-6xl w-full text-center sm:text-left relative z-10">
+        {/* --- SECCIÓN PRINCIPAL --- */}
+        <div className="flex flex-col sm:flex-row items-center gap-14 mb-20">
           <Image
-            src="/images/oficina-reivaj.jpg"
+            src="/images/equipo_1.jpeg"
             alt="Equipo Reivaj Consultoría"
-            width={420}
-            height={280}
-            className="rounded-2xl shadow-lg object-cover"
+            width={480}
+            height={320}
+            className="rounded-3xl shadow-2xl object-cover ring-4 ring-[#0A66CC]/10"
           />
-          <div>
-            <h1 className="text-4xl font-bold text-[#0A66CC] mb-4">
+          <div className="max-w-xl">
+            <h1 className="text-5xl font-extrabold bg-gradient-to-r from-[#0A66CC] to-[#4F46E5] bg-clip-text text-transparent mb-5">
               Sobre Nosotros
             </h1>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              En <span className="font-semibold text-[#0A66CC]">Reivaj Consultoría Contable y Tributaria</span> nos especializamos en ofrecer servicios financieros, contables y tributarios con un enfoque estratégico y humano. Ayudamos a empresas y emprendedores a tomar decisiones informadas, garantizar el cumplimiento normativo y optimizar su rentabilidad.
+            <p className="text-lg text-slate-700 leading-relaxed">
+              En{" "}
+              <span className="font-semibold text-[#0A66CC]">
+                Reivaj Consultoría Contable y Tributaria
+              </span>{" "}
+              ofrecemos soluciones financieras, contables y tributarias con un
+              enfoque estratégico, ético y humano. Ayudamos a empresas y
+              emprendedores a tomar decisiones informadas, cumplir con la
+              normativa vigente y optimizar su crecimiento económico.
             </p>
           </div>
         </div>
 
+        {/* --- MISIÓN Y VISIÓN --- */}
         <div className="grid sm:grid-cols-2 gap-10 mt-10">
-          <div className="bg-[#f8fafc] border border-gray-200 rounded-2xl shadow-sm p-8">
-            <h2 className="text-2xl font-semibold text-[#0A66CC] mb-3">Nuestra Misión</h2>
+          <div className="bg-white border border-slate-200 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10">
+            <h2 className="text-3xl font-bold text-[#0A66CC] mb-3">
+              Nuestra Misión
+            </h2>
             <p className="text-gray-700 leading-relaxed">
-              Brindar servicios contables y tributarios de excelencia, garantizando precisión, confianza y cumplimiento para cada cliente. Nos comprometemos con el desarrollo financiero sostenible de las empresas con las que trabajamos.
+              Brindar servicios contables y tributarios de excelencia,
+              garantizando precisión, confianza y cumplimiento. Nos
+              comprometemos con el desarrollo financiero sostenible de cada
+              cliente, fortaleciendo la gestión empresarial con innovación.
             </p>
           </div>
 
-          <div className="bg-[#f8fafc] border border-gray-200 rounded-2xl shadow-sm p-8">
-            <h2 className="text-2xl font-semibold text-[#0A66CC] mb-3">Nuestra Visión</h2>
+          <div className="bg-white border border-slate-200 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10">
+            <h2 className="text-3xl font-bold text-[#0A66CC] mb-3">
+              Nuestra Visión
+            </h2>
             <p className="text-gray-700 leading-relaxed">
-              Ser reconocidos en Latinoamérica como una firma líder en consultoría contable y tributaria, caracterizada por su innovación, ética y acompañamiento estratégico a cada cliente.
+              Ser reconocidos en Latinoamérica como una firma líder en
+              consultoría contable y tributaria, destacando por nuestra
+              transparencia, tecnología aplicada y acompañamiento cercano al
+              éxito de cada cliente.
             </p>
           </div>
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-[#0A66CC] to-[#60A5FA] text-white rounded-2xl shadow-lg p-10 text-center">
-          <h2 className="text-3xl font-bold mb-4">Nuestros Valores</h2>
-          <div className="grid sm:grid-cols-3 gap-8">
-            <div>
-              <span className="text-4xl">🤝</span>
-              <h3 className="font-semibold mt-3">Integridad</h3>
-              <p className="text-sm opacity-90 mt-2">Actuamos con transparencia y ética profesional en cada decisión.</p>
+        {/* --- VALORES --- */}
+        <div className="mt-20 bg-gradient-to-r from-[#0A66CC] via-[#2D9CDB] to-[#60A5FA] text-white rounded-3xl shadow-xl p-12 text-center">
+          <h2 className="text-4xl font-extrabold mb-10 drop-shadow-lg">
+            Nuestros Valores
+          </h2>
+          <div className="grid sm:grid-cols-3 gap-10">
+            <div className="p-6 hover:scale-105 transition-transform duration-300">
+              <span className="text-5xl">🤝</span>
+              <h3 className="font-semibold mt-4 text-lg">Integridad</h3>
+              <p className="text-sm opacity-90 mt-3">
+                Actuamos con ética y transparencia en cada acción, fomentando la
+                confianza mutua con nuestros clientes.
+              </p>
             </div>
-            <div>
-              <span className="text-4xl">📊</span>
-              <h3 className="font-semibold mt-3">Precisión</h3>
-              <p className="text-sm opacity-90 mt-2">Ofrecemos resultados exactos y confiables basados en un análisis riguroso.</p>
+            <div className="p-6 hover:scale-105 transition-transform duration-300">
+              <span className="text-5xl">📊</span>
+              <h3 className="font-semibold mt-4 text-lg">Precisión</h3>
+              <p className="text-sm opacity-90 mt-3">
+                Garantizamos exactitud en los procesos contables y fiscales,
+                sustentados en conocimiento técnico y rigor profesional.
+              </p>
             </div>
-            <div>
-              <span className="text-4xl">🚀</span>
-              <h3 className="font-semibold mt-3">Crecimiento</h3>
-              <p className="text-sm opacity-90 mt-2">Impulsamos el desarrollo continuo de nuestros clientes y de nuestro equipo.</p>
+            <div className="p-6 hover:scale-105 transition-transform duration-300">
+              <span className="text-5xl">🚀</span>
+              <h3 className="font-semibold mt-4 text-lg">Crecimiento</h3>
+              <p className="text-sm opacity-90 mt-3">
+                Impulsamos el desarrollo continuo de nuestros clientes mediante
+                asesorías estratégicas orientadas al éxito.
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col sm:flex-row items-center gap-10">
-          <Image
-            src="/images/equipo-contable.jpg"
-            alt="Equipo contable de Reivaj"
-            width={420}
-            height={280}
-            className="rounded-2xl shadow-md object-cover"
-          />
-          <div>
-            <h2 className="text-3xl font-bold text-[#0A66CC] mb-4">Nuestro Compromiso</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              En Reivaj trabajamos junto a nuestros clientes para construir relaciones de largo plazo basadas en la confianza, la transparencia y la excelencia técnica. Nos aseguramos de que cada acción contable y tributaria se realice con responsabilidad, estrategia y visión empresarial.
+        {/* --- CEO ULTRA PREMIUM --- */}
+        <div className="mt-28 flex flex-col sm:flex-row items-center gap-12 bg-white border border-slate-100 rounded-[2.5rem] shadow-2xl p-12 backdrop-blur-sm hover:shadow-[#0A66CC]/25 transition-all duration-700 relative overflow-hidden">
+          {/* FONDO LUMINOSO */}
+          <div className="absolute -top-20 -right-20 w-[350px] h-[350px] bg-[#0A66CC]/10 rounded-full blur-[120px]"></div>
+
+          {/* FOTO DEL CEO */}
+          <div className="relative flex-shrink-0">
+            <div className="w-[180px] h-[180px] rounded-full bg-gradient-to-tr from-[#0A66CC] via-[#2D9CDB] to-[#60A5FA] p-[3px] shadow-[0_8px_25px_rgba(10,102,204,0.25)]">
+              <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
+                <Image
+                  src="/images/12705795114.png"
+                  alt="Javier Quispe Cuba - CEO de Reivaj"
+                  width={160}
+                  height={160}
+                  className="rounded-full object-cover scale-95 hover:scale-100 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* TEXTO DEL CEO */}
+          <div className="text-center sm:text-left max-w-xl">
+            <h2 className="text-3xl font-extrabold text-[#0A66CC] mb-2">
+              Javier Quispe Cuba
+            </h2>
+            <p className="text-gray-600 italic mb-4">
+              CEO de Reivaj Consultoría Contable y Tributaria · CPC 08-3451
+            </p>
+            <p className="text-[17px] text-gray-700 leading-relaxed">
+              Con más de una década de experiencia en el ámbito contable y
+              tributario, el{" "}
+              <strong className="text-[#0A66CC]">
+                CPC Javier Quispe Cuba
+              </strong>{" "}
+              lidera Reivaj Consultoría con visión estratégica, innovación
+              tecnológica y compromiso con la excelencia profesional. Su enfoque
+              impulsa la confianza, fomenta el crecimiento y fortalece la
+              sostenibilidad empresarial.
             </p>
           </div>
         </div>
+
+        {/* --- FOOTER --- */}
+        <footer className="mt-28 pt-10 border-t border-slate-200 text-center text-sm text-slate-500 relative z-10">
+          <p>
+            © {new Date().getFullYear()} Reivaj Consultoría Contable y
+            Tributaria. Todos los derechos reservados.
+          </p>
+          <p className="mt-2 text-slate-400">
+            Desarrollado con excelencia por{" "}
+            <span className="font-semibold text-[#0A66CC] hover:text-[#084da0] transition">
+              AmautaDev
+            </span>{" "}
+            · Innovación & Tecnología Empresarial.
+          </p>
+        </footer>
       </section>
     </div>
   );
