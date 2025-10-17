@@ -31,6 +31,45 @@ export default function Nosotros() {
           </div>
         </div>
 
+        {/* --- CEO ULTRA PREMIUM --- */}
+        <div className="mt-28 flex flex-col sm:flex-row sm:justify-between items-center gap-12 bg-white border border-slate-100 rounded-[2.5rem] shadow-2xl p-12 backdrop-blur-sm hover:shadow-[#0A66CC]/25 transition-all duration-700 relative overflow-hidden">
+          {/* FONDO LUMINOSO */}
+
+          {/* TEXTO DEL CEO */}
+          <div className="text-center sm:text-left max-w-xl">
+            <h2 className="text-3xl font-extrabold text-[#0A66CC] mb-2">
+              Javier Quispe Cuba
+            </h2>
+            <p className="text-gray-600 italic mb-4">
+              CEO de Reivaj Consultoría Contable y Tributaria · CPC 08-3451
+            </p>
+            <p className="text-[17px] text-gray-700 leading-relaxed">
+              Con más de una década de experiencia en el ámbito contable y
+              tributario, el{" "}
+              <strong className="text-[#0A66CC]">CPC Javier Quispe Cuba</strong>{" "}
+              lidera Reivaj Consultoría con visión estratégica, innovación
+              tecnológica y compromiso con la excelencia profesional. Su enfoque
+              impulsa la confianza, fomenta el crecimiento y fortalece la
+              sostenibilidad empresarial.
+            </p>
+          </div>
+
+          {/* FOTO DEL CEO */}
+          <div className="">
+            <div className="w-[180px] h-[180px] rounded-full bg-gradient-to-tr from-[#0A66CC] via-[#2D9CDB] to-[#60A5FA] p-[3px] shadow-[0_8px_25px_rgba(10,102,204,0.25)]">
+              <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
+                <Image
+                  src="/images/12705795114.png"
+                  alt="Javier Quispe Cuba - CEO de Reivaj"
+                  width={160}
+                  height={160}
+                  className="rounded-full object-cover scale-95 hover:scale-100 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* --- MISIÓN Y VISIÓN --- */}
         <div className="grid sm:grid-cols-2 gap-10 mt-10">
           <div className="bg-white border border-slate-200 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10">
@@ -91,62 +130,6 @@ export default function Nosotros() {
           </div>
         </div>
 
-        {/* --- CEO ULTRA PREMIUM --- */}
-        <div className="mt-28 flex flex-col sm:flex-row items-center gap-12 bg-white border border-slate-100 rounded-[2.5rem] shadow-2xl p-12 backdrop-blur-sm hover:shadow-[#0A66CC]/25 transition-all duration-700 relative overflow-hidden">
-          {/* FONDO LUMINOSO */}
-          <div className="absolute -top-20 -right-20 w-[350px] h-[350px] bg-[#0A66CC]/10 rounded-full blur-[120px]"></div>
-
-          {/* FOTO DEL CEO */}
-          <div className="relative flex-shrink-0">
-            <div className="w-[180px] h-[180px] rounded-full bg-gradient-to-tr from-[#0A66CC] via-[#2D9CDB] to-[#60A5FA] p-[3px] shadow-[0_8px_25px_rgba(10,102,204,0.25)]">
-              <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
-                <Image
-                  src="/images/12705795114.png"
-                  alt="Javier Quispe Cuba - CEO de Reivaj"
-                  width={160}
-                  height={160}
-                  className="rounded-full object-cover scale-95 hover:scale-100 transition-transform duration-500"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* TEXTO DEL CEO */}
-          <div className="text-center sm:text-left max-w-xl">
-            <h2 className="text-3xl font-extrabold text-[#0A66CC] mb-2">
-              Javier Quispe Cuba
-            </h2>
-            <p className="text-gray-600 italic mb-4">
-              CEO de Reivaj Consultoría Contable y Tributaria · CPC 08-3451
-            </p>
-            <p className="text-[17px] text-gray-700 leading-relaxed">
-              Con más de una década de experiencia en el ámbito contable y
-              tributario, el{" "}
-              <strong className="text-[#0A66CC]">
-                CPC Javier Quispe Cuba
-              </strong>{" "}
-              lidera Reivaj Consultoría con visión estratégica, innovación
-              tecnológica y compromiso con la excelencia profesional. Su enfoque
-              impulsa la confianza, fomenta el crecimiento y fortalece la
-              sostenibilidad empresarial.
-            </p>
-          </div>
-        </div>
-
-        {/* --- FOOTER --- */}
-        <footer className="mt-28 pt-10 border-t border-slate-200 text-center text-sm text-slate-500 relative z-10">
-          <p>
-            © {new Date().getFullYear()} Reivaj Consultoría Contable y
-            Tributaria. Todos los derechos reservados.
-          </p>
-          <p className="mt-2 text-slate-400">
-            Desarrollado con excelencia por{" "}
-            <span className="font-semibold text-[#0A66CC] hover:text-[#084da0] transition">
-              AmautaDev
-            </span>{" "}
-            · Innovación & Tecnología Empresarial.
-          </p>
-        </footer>
       </section>
     </div>
   );
