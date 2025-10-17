@@ -11,9 +11,9 @@ export default function Footer() {
         . Todos los derechos reservados.
       </p>
       <p className="mt-2 text-slate-500">
-        Desarrollado con excelencia por{" "}
+        Desarrollado con excelencia por {" "}
         <span className="font-semibold text-[#0A66CC] hover:text-[#084da0] transition">
-          AmautaDev
+          <a href="https://www.facebook.com/profile.php?id=61582259755208&notif_id=1760569327633177&notif_t=profile_plus_admin_invite&ref=notif&locale=es_LA">AmautaDev</a>
         </span>{" "}
         · Innovación & Tecnología Empresarial.
       </p>
