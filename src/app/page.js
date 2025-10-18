@@ -91,7 +91,7 @@ export default function Home() {
   }
 
   return (
-    <div className="p-16 font-sans text-gray-900 flex flex-col items-center justify-between bg-gradient-to-b from-white via-blue-50 to-[#EAF2FD]">
+    <div className="p-4 sm:p-16 font-sans text-gray-900 flex flex-col items-center justify-between bg-gradient-to-b from-white via-blue-50 to-[#EAF2FD]">
       <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center sm:text-left px-4 sm:px-20 overflow-hidden">
         <Image
           src="/images/fondo-corporativo.jpeg"
@@ -164,7 +164,7 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="w-full max-w-5xl px-8 sm:px-0 pb-20 animate-fadeIn">
+      <section className="hidden sm:block w-full max-w-5xl px-8 sm:px-0 pb-20 animate-fadeIn">
         <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center sm:text-left">
           Análisis Financiero - Evolución de Ingresos y Egresos
         </h3>
