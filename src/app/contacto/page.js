@@ -98,13 +98,15 @@ export default function Contacto() {
                 Información de contacto
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                <span className="font-semibold">Dirección:</span> Jr. Lima 326, Oficina 306 - Hyo Huancayo, Perú
+                <span className="font-semibold">Dirección:</span> Jr. Lima 326, Oficina 306 - Huancayo, Perú
               </p>
               <p className="text-gray-700 leading-relaxed">
                 <span className="font-semibold">Teléfono:</span> +51 998 804 826
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <span className="font-semibold">Correo:</span> jjasesoria.contabilidad@gmail.com
+                <span className="font-semibold">Correos:</span><br />
+                jjasesoria.contabilidad@gmail.com<br />
+                javi332332@gmail.com
               </p>
             </div>
 
@@ -112,18 +114,15 @@ export default function Contacto() {
               <h2 className="text-2xl font-semibold text-[#0A66CC] mb-3">
                 Horario de atención
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                Lunes a Viernes: 9:00 a.m. - 6:00 p.m.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Sábados: 9:00 a.m. - 1:00 p.m.
-              </p>
+              <p className="text-gray-700 leading-relaxed">Lunes a Viernes: 9:00 a.m. - 7:00 p.m.</p>
+              <p className="text-gray-700 leading-relaxed">Sábados: 9:00 a.m. - 1:00 p.m.</p>
             </div>
 
             <div className="flex justify-center sm:justify-start gap-5">
               <a
                 href="https://www.linkedin.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-[#0A66CC] text-white rounded-full hover:bg-[#084b99] transition"
               >
                 <Image
@@ -137,6 +136,7 @@ export default function Contacto() {
               <a
                 href="https://www.facebook.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-[#0A66CC] text-white rounded-full hover:bg-[#084b99] transition"
               >
                 <Image
@@ -150,6 +150,7 @@ export default function Contacto() {
               <a
                 href="https://www.instagram.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-[#0A66CC] text-white rounded-full hover:bg-[#084b99] transition"
               >
                 <Image
@@ -177,6 +178,7 @@ export default function Contacto() {
             <a
               href="https://maps.app.goo.gl/ggecBrXDBBrUkWpw7"
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg"
             >
               Ver en Google Maps
