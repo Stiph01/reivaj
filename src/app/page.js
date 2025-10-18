@@ -94,7 +94,7 @@ export default function Home() {
     <div className="p-16 font-sans text-gray-900 flex flex-col items-center justify-between bg-gradient-to-b from-white via-blue-50 to-[#EAF2FD]">
       <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center sm:text-left px-4 sm:px-20 overflow-hidden">
         <Image
-          src="/images/fondo-corporativo.jpeg"
+          src="/images/9486e528-852c-46ba-8212-f7a6f55da614.png"
           alt="Fondo corporativo Reivaj"
           fill
           priority
