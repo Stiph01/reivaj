@@ -46,7 +46,7 @@ export default function Nosotros() {
       <section className="max-w-6xl w-full text-center sm:text-left relative z-10">
         <div className="flex flex-col sm:flex-row items-center gap-14 mb-20">
           <Image
-            src="/images/equipo_1.jpeg"
+            src="/images/photo/IMG_9524.jpg"
             alt="Equipo Reivaj Consultoría"
             width={480}
             height={320}
@@ -81,11 +81,13 @@ export default function Nosotros() {
               <p className="text-[17px] text-gray-700 leading-relaxed max-w-2xl mx-auto sm:mx-0">
                 Con más de una década de experiencia en el ámbito contable y
                 tributario, el{" "}
-                <strong className="text-[#0A66CC]">CPC Javier Quispe Cuba</strong>{" "}
+                <strong className="text-[#0A66CC]">
+                  CPC Javier Quispe Cuba
+                </strong>{" "}
                 lidera Reivaj Consultoría con visión estratégica, innovación
-                tecnológica y compromiso con la excelencia profesional. Su enfoque
-                impulsa la confianza, fomenta el crecimiento y fortalece la
-                sostenibilidad empresarial.
+                tecnológica y compromiso con la excelencia profesional. Su
+                enfoque impulsa la confianza, fomenta el crecimiento y fortalece
+                la sostenibilidad empresarial.
               </p>
             </div>
             <div className="flex justify-center sm:justify-end">
@@ -194,7 +196,12 @@ export default function Nosotros() {
                   </div>
                   <div className="flex gap-1 mb-3">
                     {[...Array(t.estrellas)].map((_, j) => (
-                      <span key={j} className="text-yellow-400 text-xl drop-shadow-sm">★</span>
+                      <span
+                        key={j}
+                        className="text-yellow-400 text-xl drop-shadow-sm"
+                      >
+                        ★
+                      </span>
                     ))}
                   </div>
                   <p className="text-slate-700 italic mb-6 leading-relaxed">
@@ -209,5 +216,5 @@ export default function Nosotros() {
         </div>
       </section>
     </div>
-  )
+  );
 }
