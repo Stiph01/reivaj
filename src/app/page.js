@@ -137,7 +137,7 @@ export default function Home() {
           </div>
           <div className="md:w-2/5 p-3 flex justify-center my-6">
             <Image
-              src="/images/image_finance.jpg"
+              src="/images/photo/IMG_9564.jpg"
               alt="imagen referencial consultoria financiera"
               width={700}
               height={700}
