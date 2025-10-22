@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900 relative`}
       >
         <Nav />
-        <main>{children}</main>
+        <main className="pt-14">{children}</main>
         <Footer />
         <ChatBot />
       </body>
