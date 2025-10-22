@@ -47,22 +47,11 @@ export default function Home() {
   }, [])
 
   const options = {
-    chart: {
-      type: "area",
-      toolbar: { show: false },
-      animations: {
-        enabled: true,
-        easing: "easeInOut",
-        speed: 1000,
-        animateGradually: { enabled: true, delay: 150 },
-        dynamicAnimation: { enabled: true, speed: 800 },
-      },
-      dropShadow: { enabled: true, top: 6, left: 0, blur: 10, color: "#0A66CC", opacity: 0.12 },
-    },
+    chart: { type: "area", toolbar: { show: false } },
     stroke: { width: 4, curve: "smooth" },
     colors: ["#0A66CC", "#E53E3E", "#10B981"],
     dataLabels: { enabled: false },
-    grid: { borderColor: "#E2E8F0", strokeDashArray: 4, padding: { left: 20, right: 20 } },
+    grid: { borderColor: "#E2E8F0", strokeDashArray: 4 },
     fill: {
       type: "gradient",
       gradient: {
@@ -76,25 +65,18 @@ export default function Home() {
     markers: { size: 0 },
     xaxis: {
       categories: data.map((d) => d.mes),
-      labels: { style: { fontSize: "13px", colors: "#64748B", fontWeight: 500 } },
+      labels: { style: { fontSize: "12px", colors: "#64748B" } },
     },
     yaxis: {
       labels: { formatter: (v) => `S/ ${v / 1000}k`, style: { colors: "#475569" } },
-      title: { text: "Soles (PEN)", style: { color: "#0A1A33", fontWeight: 600 } },
     },
     legend: {
       position: "top",
       horizontalAlign: "center",
-      fontSize: "14px",
-      fontWeight: 600,
+      fontSize: "13px",
       labels: { colors: "#0A1A33" },
-      markers: { width: 14, height: 14, radius: 14 },
     },
-    tooltip: {
-      theme: "dark",
-      style: { fontSize: "13px", fontWeight: 500 },
-      y: { formatter: (val) => `S/ ${val.toLocaleString("es-PE")}` },
-    },
+    tooltip: { theme: "dark", y: { formatter: (val) => `S/ ${val.toLocaleString("es-PE")}` } },
   }
 
   const fotos = [
@@ -119,7 +101,6 @@ export default function Home() {
           className="object-cover object-center opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-[#F8FAFC]/60 to-[#E0F2FE]/80 backdrop-blur-[1px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.06),transparent_80%)] animate-pulse-slow" />
 
         <div className="md:w-1/2 max-w-xl space-y-6 relative z-10">
           <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
@@ -135,36 +116,36 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
             <Link
               href="/servicios"
-              className="bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-blue-300/40 transition-all duration-300 hover:-translate-y-0.5"
+              className="bg-[#0A66CC] hover:bg-[#084b99] text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-blue-300/40 transition-all duration-300"
             >
               Conoce Nuestros Servicios
             </Link>
             <Link
               href="/contacto"
-              className="border-2 border-[#0A66CC] text-[#0A66CC] hover:bg-[#0A66CC] hover:text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-blue-200/40 hover:-translate-y-0.5 transition-all duration-300"
+              className="border-2 border-[#0A66CC] text-[#0A66CC] hover:bg-[#0A66CC] hover:text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-blue-200/40 transition-all duration-300"
             >
               Solicita una Consulta
             </Link>
           </div>
         </div>
 
-        <div className="md:w-1/2 h-[650px] relative overflow-hidden mt-10 md:mt-0 z-10">
+        <div className="md:w-1/2 min-h-[400px] sm:h-[650px] relative overflow-visible mt-10 md:mt-0 z-10">
           <motion.div
-            animate={{ y: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
+            animate={{ y: ["0%", "-100%"] }}
+            transition={{ repeat: Infinity, duration: 26, ease: "linear" }}
             className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col gap-6"
           >
             {duplicated.map((src, i) => (
               <motion.div
                 key={i}
-                className="rounded-3xl overflow-hidden shadow-lg hover:shadow-blue-300/40 transition-all duration-500"
+                className="rounded-3xl overflow-hidden shadow-lg hover:shadow-blue-300/40 transition-all duration-500 flex-shrink-0"
                 whileHover={{ scale: 1.05 }}
               >
                 <Image
                   src={src}
                   alt={`Equipo Reivaj ${i + 1}`}
-                  width={320}
-                  height={320}
+                  width={300}
+                  height={300}
                   className="rounded-3xl object-cover aspect-square"
                 />
               </motion.div>
@@ -192,22 +173,15 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="hidden sm:block w-full max-w-6xl px-6 sm:px-0 pb-20 animate-fadeIn">
+      <section className="block w-full max-w-6xl px-6 sm:px-0 pb-20 animate-fadeIn">
         <div className="relative bg-gradient-to-b from-[#ffffff] via-[#F9FAFB] to-[#EFF6FF] border border-gray-200 rounded-3xl shadow-[0_10px_40px_rgba(10,102,204,0.08)] overflow-hidden backdrop-blur-sm transition-all duration-700 hover:shadow-[0_20px_50px_rgba(10,102,204,0.15)]">
           <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0A66CC] to-[#60A5FA]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(96,165,250,0.05),transparent_70%)]" />
-          <div className="absolute inset-0 flex items-center justify-center opacity-[0.03]">
-            <Image src="/images/logo-reivaj-blanco.svg" alt="Marca de agua Reivaj" width={500} height={500} className="object-contain" />
-          </div>
-          <div className="relative px-8 pt-10 pb-8">
-            <div className="flex flex-col sm:flex-row items-center justify-between mb-8">
-              <h3 className="text-2xl font-bold text-[#0A1A33] tracking-tight">
-                Análisis Financiero<span className="text-[#0A66CC]"> – Evolución Dinámica de Ingresos, Egresos y Utilidad</span>
-              </h3>
-              <div className="hidden sm:block h-[3px] w-44 bg-gradient-to-r from-[#0A66CC] to-[#60A5FA] rounded-full" />
-            </div>
-            <div className="bg-white/80 backdrop-blur-lg border border-gray-100 rounded-2xl shadow-inner p-4 sm:p-6 hover:shadow-[0_8px_30px_rgba(10,102,204,0.1)] transition-all duration-500">
-              <Chart options={options} series={series} type="area" height={420} />
+          <div className="relative px-6 pt-8 pb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#0A1A33] tracking-tight mb-6 text-center sm:text-left">
+              Análisis Financiero<span className="text-[#0A66CC]"> – Evolución de Ingresos, Egresos y Utilidad</span>
+            </h3>
+            <div className="bg-white/80 backdrop-blur-lg border border-gray-100 rounded-2xl shadow-inner p-4 sm:p-6">
+              <Chart options={options} series={series} type="area" height={350} />
             </div>
           </div>
         </div>
@@ -220,11 +194,6 @@ export default function Home() {
         }
         .animate-fadeIn { animation: fadeIn 1.2s ease-out; }
         .animate-slideUp { animation: fadeIn 1.4s ease-out; }
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.6; }
-        }
-        .animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
       `}</style>
     </div>
   )
