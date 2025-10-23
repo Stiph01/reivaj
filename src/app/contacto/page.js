@@ -111,6 +111,8 @@ export default function Contacto() {
                 jjasesoria.contabilidad@gmail.com
                 <br />
                 javi332332@gmail.com
+                <br />
+                javierquispecuba@reivajconsultoria.com
               </p>
             </div>
 
