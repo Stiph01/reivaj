@@ -30,11 +30,10 @@ export default function Nav() {
           </div>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8 text-[14px] font-medium text-gray-700">
+        <ul className="hidden md:flex items-center gap-8 text-[14px] font-medium text-gray-600 sm:text-lg sm:font-semibold">
           <li><Link href="/" className="hover:text-[#0A66CC] transition">Inicio</Link></li>
           <li><Link href="/nosotros" className="hover:text-[#0A66CC] transition">Nosotros</Link></li>
           <li><Link href="/servicios" className="hover:text-[#0A66CC] transition">Servicios</Link></li>
-          <li><Link href="/contacto" className="hover:text-[#0A66CC] transition">Contacto</Link></li>
         </ul>
 
         <Link

@@ -1,4 +1,5 @@
 "use client"
+import { Eye, Scale } from "lucide-react";
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, Pagination } from "swiper/modules"
@@ -50,7 +51,7 @@ export default function Nosotros() {
             alt="Equipo Reivaj Consultoría"
             width={480}
             height={320}
-            className="rounded-3xl shadow-2xl object-cover ring-4 ring-[#0A66CC]/10"
+            className="rounded-3xl min-w-2xs lg:min-w-md shadow-2xl object-cover"
           />
           <div className="max-w-xl">
             <h1 className="text-5xl font-extrabold bg-gradient-to-r from-[#0A66CC] to-[#4F46E5] bg-clip-text text-transparent mb-5">
@@ -68,7 +69,6 @@ export default function Nosotros() {
             </p>
           </div>
         </div>
-
         <div className="mt-28 w-full flex flex-col items-center justify-center">
           <div className="bg-white border border-slate-100 rounded-[2rem] shadow-2xl p-10 sm:p-14 flex flex-col-reverse sm:flex-row items-center justify-between gap-10 sm:gap-16 max-w-5xl w-full text-center sm:text-left transition-all duration-700 hover:shadow-[#0A66CC]/25">
             <div className="flex-1">
@@ -106,9 +106,9 @@ export default function Nosotros() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-10 mt-10">
-          <div className="bg-white border border-slate-200 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10">
-            <h2 className="text-3xl font-bold text-[#0A66CC] mb-3">
+        <div className="grid sm:grid-cols-5 gap-10 mt-10 pt-10">
+          <div className="sm:col-span-4 bg-white rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10">
+            <h2 className="text-3xl font-bold text-[#0A66CC] mb-3 border-b-4 border-blue-500 pb-5 mb-5">
               Nuestra Misión
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -118,8 +118,14 @@ export default function Nosotros() {
               cliente, fortaleciendo la gestión empresarial con innovación.
             </p>
           </div>
-          <div className="bg-white border border-slate-200 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10">
-            <h2 className="text-3xl font-bold text-[#0A66CC] mb-3">
+          <div className="flex justify-center items-center row-start-1 sm:row-start-auto">
+            <Scale className="stroke-2 w-40 h-40 stroke-blue-500" />
+          </div>
+          <div className="flex justify-center items-center">
+            <Eye className="stroke-3 w-40 h-40 stroke-blue-500" />
+          </div>
+          <div className="sm:col-span-4 bg-white rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10">
+            <h2 className="text-3xl font-bold text-[#0A66CC] mb-3 border-b-4 border-blue-500 pb-5 mb-5">
               Nuestra Visión
             </h2>
             <p className="text-gray-700 leading-relaxed">
